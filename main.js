@@ -6,7 +6,7 @@ let spawnId
 let fruits = []
 let lastFruitSpawnTime = Date.now()
 let game = new Game()
-let fruitSpawnInterval = 300 // 3000 milisegundos = 3 segundos entre cada generación de enemigos
+let fruitSpawnInterval = 400 // 3000 milisegundos = 3 segundos entre cada generación de enemigos
 
 // function gameStartaddd) {
 //     player.insertPlayer()

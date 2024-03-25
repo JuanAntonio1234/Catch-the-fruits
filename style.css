@@ -1,42 +1,3 @@
-#Score, #Combo {
-    text-align: center;
-}
-#board {
-    width: 500px;
-    height: 800px;
-    background-color: cyan;
-    position: relative;
-    margin: 0 auto;
-    
-}
-
-
-#player {
-    width: 100px;
-    height: 100px;
-    background-image: url(./images/goku.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    margin: 0 auto
-
-    /* top: 750px;
-    left: 225px; */
-}
-
-
-
-.fruit {
-    width: 50px;
-    height: 50px;
-    background-image: url(./images/apple.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    /* top: 750px;
-    left: 225px; */
-}
-
 .bomb {
     width: 50px;
     height: 50px;
@@ -59,29 +20,58 @@
     left: 225px; */
 }
 
-/* background-image: url("https://image.shutterstock.com/image-vector/dragon-ball-series-vector-six-260nw-1943752363.jpg"); */
 
-/* #board {
+body {
+    margin: 0;
+    padding: 0;
+    border-bottom: 30px solid rgb(255, 255, 255); /* Agrega un borde inferior al body */
+}
+
+#puntuacion {
+    text-align: center;
+    border: solid 1px red;
+    font-size: 15px;
+    font-family: 'Anton', sans-serif;
+    background-image: url("https://i.pinimg.com/originals/ef/5e/4b/ef5e4b4d024c66b42311e337ae8ab4cc.gif");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+h1, h2 {
+    margin: 0;
+}
+#board {
     width: 500px;
     height: 800px;
-    background-color: black;
+    background-image: url("https://i.redd.it/aj4wg4z9u9f71.png");
+    background-size: cover;
     position: relative;
-    margin: 0 auto
-} */
+    border-width: 30px; /* Agrega un ancho al borde */
+    border-style: solid; /* Establece el estilo del borde */
+    border-color: transparent; /* Establece el color del borde transparente */
+    border-radius: 50px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Agrega una sombra en el lado inferior derecho */
+    margin: 0 auto;
+}
 
-/* Codigo original 
+
+#player {
+    width: 100px;
+    height:100px;
+    background-image: url(./images/goku.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
 .fruit {
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-image: url(./images/boladedragon.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
-    /* top: 750px;
-    left: 225px; */
-
-   /*  #player {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    position: absolute;
-    /* top: 750px;
-    left: 225px; */
+}

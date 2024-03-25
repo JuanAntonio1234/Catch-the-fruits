@@ -9,23 +9,29 @@
     <script src="fruit.js" defer></script>
     <script src="player.js" defer></script>
     <script src="main.js" defer></script>
-    <script src="music.js" defer></script>
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- FIN FUENTE -->
 </head>
 <body>
-    <div>
-        <audio id="musica" autoplay loop>
-        <source src="music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="reproducirMusica()">Play</button>
-        <button onclick="pausarMusica()">Pause</button>
+    <div id="puntuacion">
+        <div>
+            <audio id="musica" autoplay loop>
+            <source src="./music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="reproducirMusica()">Play</button>
+            <button onclick="pausarMusica()">Pause</button>
         </div>
-        
-    <div><h1 id="Score">Score: 0</h1>
+        <h1 id="Score">Score: 0</h1>
         <h2 id="Combo">Combo: 0</h2>
-        <main id="board">
-
-        </main>
     </div>
+
+    <main id="board">
+    </main>
 </body>
 </html>
