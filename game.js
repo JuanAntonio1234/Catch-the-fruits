@@ -14,6 +14,10 @@ function Game() {
             this.score -= 500;
         }
 
+        if(this.score < 0){
+            this.score = 0;
+        }
+
     }
 }
 
