@@ -68,6 +68,13 @@ window.addEventListener('keydown', function (e) {
         case 'd':
             player.direction = 1
             break
+        case 'ArrowLeft':
+            player.direction = -1
+            break
+        case 'ArrowRight':
+            player.direction = 1
+            break
+
         // player.move()
         // case 'w':
         //     player.directionY = - 1
