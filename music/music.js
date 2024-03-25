@@ -1,12 +1,10 @@
-var musica = document.getElementById("musica");
-
 function reproducirMusica() {
-  musica.play();
-}
+    musica.play();
+  }
 
-function pausarMusica() {
-  musica.pause();
-}
+  function pausarMusica() {
+    musica.pause();
+  }
 
-
-reproducirMusica();
+  // Reproducir la música automáticamente al cargar la página
+  reproducirMusica();

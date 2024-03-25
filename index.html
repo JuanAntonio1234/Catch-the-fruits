@@ -8,14 +8,20 @@
     <script src="fruit.js" defer></script>
     <script src="player.js" defer></script>
     <script src="main.js" defer></script>
+    <script src="music/music.js" defer></script>
 </head>
 <body>
+    <div>
+    <audio id="musica" autoplay loop>
+        <source src="music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+      <button onclick="reproducirMusica()">Play</button>
+      <button onclick="pausarMusica()">Pause</button>
+    </div>
     <main id="board">
         <div id="wall">
-            <audio id="musica" autoplay loop>
-                <source src="music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
-                Tu navegador no soporta el elemento de audio.
-              </audio>
+         
               
         </div>
     </main>
