@@ -14,7 +14,7 @@
 #player {
     width: 100px;
     height: 100px;
-    background-image: url(./goku.png);
+    background-image: url(./images/goku.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -29,7 +29,7 @@
 .fruit {
     width: 50px;
     height: 50px;
-    background-image: url(./apple.png);
+    background-image: url(./images/apple.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -40,7 +40,7 @@
 .bomb {
     width: 50px;
     height: 50px;
-    background-image: url(bomb.png);
+    background-image: url(./images/bomb.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -51,7 +51,7 @@
 .goldenApple {
     width: 50px;
     height: 50px;
-    background-image: url(./goldenApple.webp);
+    background-image: url(./images/goldenApple.webp);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;

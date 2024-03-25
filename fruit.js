@@ -38,7 +38,7 @@ function Fruit(x, y, board, fruits, game, type) {
     this.removeFruit = function (idx) {
         if (this.y + 10 >= 750) {
             fruits.shift()
-            if(this.type != "bomb"){
+            if(this.type != "bomb" && this.type != "goldenApple"){
                 let currentComboHtml = document.getElementById("Combo")
                 currentComboHtml.innerText = ("Combo: 0")
                 game.currentCombo = 0;
