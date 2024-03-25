@@ -48,8 +48,11 @@ function createFruits() {
     let coordX = Math.floor(Math.random() * 10) * 50
     let randomFruitType = Math.floor(Math.random() * 10) + 1
     let fruit;
-    if(randomFruitType >= 0 && randomFruitType <=9){
+    if(randomFruitType >= 0 && randomFruitType <=8){
         fruit = new Fruit(coordX, 0, board, fruits, game, "fruit")
+    }
+    else if(randomFruitType == 9){
+        fruit = new Fruit(coordX, 0, board, fruits, game, "goldenApple")
     }
     else{
         fruit = new Fruit(coordX, 0, board, fruits, game, "bomb")

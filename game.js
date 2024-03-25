@@ -10,8 +10,12 @@ function Game() {
         if (type === "apple") {
             let scoreToAdd = 100 + this.currentCombo * 15;
             this.score += scoreToAdd
-        }else if(type === "bomb"){
+        }
+        else if(type === "bomb"){
             this.score -= 500;
+        }
+        else if(type === "golden_apple"){
+            this.score += 5000 + this.currentCombo * 15;
         }
 
         if(this.score < 0){
