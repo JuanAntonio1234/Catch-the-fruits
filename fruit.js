@@ -62,7 +62,7 @@ function Fruit(x, y, board, fruits, game, type) {
                 combo_html.innerText = "Combo: " + game.currentCombo
                 this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
             }else{
-           
+                game.currentCombo = 0
                 game.addScore("bomb")
 
                 score_html.innerText = "Score: " + game.score
