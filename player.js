@@ -6,7 +6,7 @@ function Player(x, y, board) {
     this.direction = 0
     this.width = 50
     this.height = 50
-    this.isDead = false
+
     this.sprite = document.createElement('div')
     this.velocityY = 0
     this.gravity = 0.8

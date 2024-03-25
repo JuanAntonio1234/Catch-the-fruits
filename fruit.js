@@ -1,8 +1,8 @@
-function Fruit(x, y, board, fruits) {
+function Fruit(x, y, board, fruits, game) {
     let self = this
     this.x = x
     this.y = y
-    this.speed = 5
+    this.speed = 20
     this.direction = 1
     this.width = 50
     this.height = 50
@@ -27,8 +27,11 @@ function Fruit(x, y, board, fruits) {
         }
     }
     this.removeFruit = function (idx) {
-        if (self.y >= 750) {
+        if (this.y + 10 >= 750) {
+            let currentComboHtml = document.getElementById("Combo")
+            currentComboHtml.innerText = ("Combo: 0")
             fruits.shift()
+            game.currentCombo = 0;
         }
         else {
             fruits.splice(idx, 1)
@@ -42,7 +45,14 @@ function Fruit(x, y, board, fruits) {
             this.y < player.y + player.height &&
             this.x + this.width > player.x &&
             this.y + this.height > player.y) {
-            player.isDead = true
+            game.currentCombo += 1
+            game.addScore()
+            let score_html = document.getElementById("Score")
+            score_html.innerText = "Score: " + game.score
+            let combo_html = document.getElementById("Combo")
+            combo_html.innerText = "Combo: " + game.currentCombo
+            this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
+            console.log(game.score)
         }
     }
 

@@ -1,22 +1,6 @@
-#puntuacion {
-        border: solid 3px;
-        padding: 1em;
-        max-width: 75%;
-        text-align: center; 
-        position: relative;
-
-      }
-      .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 8em;
-        position: relative;
-
-      }
-
-
-
+#Score, #Combo {
+    text-align: center;
+}
 #board {
     width: 500px;
     height: 800px;
