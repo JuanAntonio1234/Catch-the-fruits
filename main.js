@@ -5,7 +5,8 @@ let timerId
 let spawnId
 let fruits = []
 let lastFruitSpawnTime = Date.now()
-let fruitSpawnInterval = 3000 // 3000 milisegundos = 3 segundos entre cada generación de enemigos
+let game = new Game()
+let fruitSpawnInterval = 1000 // 3000 milisegundos = 3 segundos entre cada generación de enemigos
 
 // function gameStart() {
 //     player.insertPlayer()
@@ -31,23 +32,21 @@ function gameStart() {
 
 
 function movePlayer() {
-    if (player.isDead === false) {
         player.move()
-    }
-    else {
-        clearInterval(timerId)
+
+        /* clearInterval(timerId)
         clearInterval(spawnId)
         fruits.forEach(function (fruit) {
             clearInterval(fruit.timerId)
         })
-        // window.alert('Game Over!!!')
-    }
+        // window.alert('Game Over!!!') */
+    
 }
 
 
 function createFruits() {
     let coordX = Math.floor(Math.random() * 10) * 50
-    let fruit = new Fruit(coordX, 0, board, fruits)
+    let fruit = new Fruit(coordX, 0, board, fruits, game)
     fruit.insertFruit()
     fruits.push(fruit)
 }
