@@ -1,6 +1,28 @@
-#container{
-    height: 800px;
+#board {
     width: 500px;
+    height: 800px;
     background-color: black;
+    position: relative;
     margin: 0 auto
+}
+
+
+#player {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    /* top: 750px;
+    left: 225px; */
+}
+
+
+
+.fruit {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    /* top: 750px;
+    left: 225px; */
 }
