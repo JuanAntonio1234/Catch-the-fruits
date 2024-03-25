@@ -3,7 +3,7 @@ function Fruit(x, y, board, fruits, game, type) {
     this.type = type
     this.x = x
     this.y = y
-    this.speed = 20
+    this.speed = 2
     this.direction = 1
     this.width = 50
     this.height = 50
@@ -74,5 +74,5 @@ function Fruit(x, y, board, fruits, game, type) {
         }
     }
 
-    this.timerId = setInterval(this.move, 50)
+    this.timerId = setInterval(this.move, 5)
 }

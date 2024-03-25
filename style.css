@@ -4,7 +4,7 @@
 #board {
     width: 500px;
     height: 800px;
-    background-color: black;
+    background-color: cyan;
     position: relative;
     margin: 0 auto;
     
@@ -12,9 +12,9 @@
 
 
 #player {
-    width: 50px;
-    height: 50px;
-    background-image: url("https://ih1.redbubble.net/image.3590208783.3634/flat,750x,075,f-pad,750x1000,f8f8f8.jpg");
+    width: 100px;
+    height: 100px;
+    background-image: url(./goku.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -29,7 +29,7 @@
 .fruit {
     width: 50px;
     height: 50px;
-    background-image: url(./sddfasdfs.png);
+    background-image: url(./apple.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -40,7 +40,7 @@
 .bomb {
     width: 50px;
     height: 50px;
-    background-image: url(595582.png);
+    background-image: url(bomb.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
