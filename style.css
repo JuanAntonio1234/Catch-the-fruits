@@ -1,17 +1,41 @@
+#puntuacion {
+        border: solid 3px;
+        padding: 1em;
+        max-width: 75%;
+        text-align: center; 
+        position: relative;
+
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 8em;
+        position: relative;
+
+      }
+
+
+
 #board {
     width: 500px;
     height: 800px;
     background-color: black;
     position: relative;
-    margin: 0 auto
+    margin: 0 auto;
+    
 }
 
 
 #player {
     width: 50px;
     height: 50px;
-    background-color: blue;
+    background-image: url("https://ih1.redbubble.net/image.3590208783.3634/flat,750x,075,f-pad,750x1000,f8f8f8.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
+    margin: 0 auto
+
     /* top: 750px;
     left: 225px; */
 }
@@ -21,8 +45,37 @@
 .fruit {
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-image: url("../sddfasdfs.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     /* top: 750px;
     left: 225px; */
 }
+
+/* background-image: url("https://image.shutterstock.com/image-vector/dragon-ball-series-vector-six-260nw-1943752363.jpg"); */
+
+/* #board {
+    width: 500px;
+    height: 800px;
+    background-color: black;
+    position: relative;
+    margin: 0 auto
+} */
+
+/* Codigo original 
+.fruit {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    /* top: 750px;
+    left: 225px; */
+
+   /*  #player {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    /* top: 750px;
+    left: 225px; */
