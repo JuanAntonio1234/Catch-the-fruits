@@ -1,5 +1,6 @@
-function Fruit(x, y, board, fruits, game) {
+function Fruit(x, y, board, fruits, game, type) {
     let self = this
+    this.type = type
     this.x = x
     this.y = y
     this.speed = 20
@@ -9,7 +10,12 @@ function Fruit(x, y, board, fruits, game) {
     this.sprite = document.createElement('div')
 
     this.insertFruit = function () {
-        this.sprite.setAttribute('class', 'fruit')
+        if (this.type == "fruit") {
+            this.sprite.setAttribute('class', 'fruit')
+        } else {
+            this.sprite.setAttribute('class', 'bomb')
+        }
+
         this.sprite.style.left = this.x + 'px'
         this.sprite.style.top = this.y + 'px'
         board.appendChild(this.sprite)
@@ -41,18 +47,30 @@ function Fruit(x, y, board, fruits, game) {
     }
 
     this.checkCollision = function () {
+        let score_html = document.getElementById("Score")
+        let combo_html = document.getElementById("Combo")
         if (this.x < player.x + player.width &&
             this.y < player.y + player.height &&
             this.x + this.width > player.x &&
             this.y + this.height > player.y) {
-            game.currentCombo += 1
-            game.addScore()
-            let score_html = document.getElementById("Score")
-            score_html.innerText = "Score: " + game.score
-            let combo_html = document.getElementById("Combo")
-            combo_html.innerText = "Combo: " + game.currentCombo
-            this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
-            console.log(game.score)
+            if (this.type == "fruit") {
+                game.currentCombo += 1
+                game.addScore("apple")
+               
+                score_html.innerText = "Score: " + game.score
+                
+                combo_html.innerText = "Combo: " + game.currentCombo
+                this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
+            }else{
+           
+                game.addScore("bomb")
+
+                score_html.innerText = "Score: " + game.score
+                
+                combo_html.innerText = "Combo: " + game.currentCombo
+                this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
+
+            }
         }
     }
 
