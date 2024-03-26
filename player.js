@@ -1,11 +1,13 @@
-function Player(x, y, board) {
+function Player(x, y, health, board) {
     let self = this
     this.x = x
     this.y = y
+    this.health = health;
     this.speed = 5
     this.direction = 0
     this.width = 100
-    this.height = 100
+    this.height = 100;
+    this.vida = 100;
 
     this.sprite = document.createElement('div')
     this.velocityY = 0

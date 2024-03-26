@@ -17,6 +17,9 @@ function Game() {
         else if(type === "golden_apple"){
             this.score += 5000 + this.currentCombo * 15;
         }
+        else if(type === "iceCream"){
+            this.score += 500000 + this.currentCombo * 15;
+        }
 
         if(this.score < 0){
             this.score = 0;

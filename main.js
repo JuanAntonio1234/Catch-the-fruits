@@ -1,12 +1,12 @@
 let board = document.getElementById('board')
 let wall = document.getElementById('wall')
-let player = new Player(225, 700, board)
+let player = new Player(225, 700, 100, board)
 let timerId
 let spawnId
 let fruits = []
 let lastFruitSpawnTime = Date.now()
 let game = new Game()
-let fruitSpawnInterval = 400 // 3000 milisegundos = 3 segundos entre cada generación de enemigos
+let fruitSpawnInterval = 400 // modificar para cambiar la velocidad del juego
 
 // function gameStartaddd) {
 //     player.insertPlayer()
@@ -46,16 +46,19 @@ function movePlayer() {
 
 function createFruits() {
     let coordX = Math.floor(Math.random() * 10) * 50
-    let randomFruitType = Math.floor(Math.random() * 10) + 1
+    let randomFruitType = Math.floor(Math.random() * 20) + 1
     let fruit;
-    if(randomFruitType >= 0 && randomFruitType <=8){
-        fruit = new Fruit(coordX, 0, board, fruits, game, "fruit")
+    if(randomFruitType >= 0 && randomFruitType <=15){
+        fruit = new Fruit(coordX, 0, board, fruits, game, "fruit", player)
     }
-    else if(randomFruitType == 9){
-        fruit = new Fruit(coordX, 0, board, fruits, game, "goldenApple")
+    else if(randomFruitType <=17 && randomFruitType >15){
+        fruit = new Fruit(coordX, 0, board, fruits, game, "goldenApple", player)
+    }
+    else if(randomFruitType === 18 || randomFruitType === 19){
+        fruit = new Fruit(coordX, 0, board, fruits, game, "iceCream", player)
     }
     else{
-        fruit = new Fruit(coordX, 0, board, fruits, game, "bomb")
+        fruit = new Fruit(coordX, 0, board, fruits, game, "bomb", player)
     }
     
     fruit.insertFruit()

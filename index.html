@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,24 +18,46 @@
         rel="stylesheet">
     <!-- FIN FUENTE -->
 </head>
+
 <body>
     <div id="globalBackground">
         <div id="puntuacion">
-        <div>
-            <audio id="musica" autoplay loop>
-            <source src="./music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
-            </audio>
+            <div>
+                <audio id="musica" autoplay loop>
+                    <source src="./music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+
             <button onclick="reproducirMusica()">Play</button>
             <button onclick="pausarMusica()">Pause</button>
+            <h1 id="Score">Score: 0</h1>
+            <h2 id="Combo">Combo: 0</h2>
         </div>
-        <h1 id="Score">Score: 0</h1>
-        <h2 id="Combo">Combo: 0</h2>
+
+        <div>
+            <div id="vida">
+                
+            </div>
+
+            <div id="bolas">
+                <div id="superBola1" style="display: block;"></div>
+                <div id="superBola2" style="display: block;"></div>
+                <div id="superBola3" style="display: block;"></div>
+                <div id="superBola4" style="display: block;"></div>
+                <div id="superBola5" style="display: block;"></div>
+                <div id="superBola6" style="display: block;"></div>
+                <div id="superBola7" style="display: block;"></div>
+            </div>
+    
+            <main id="board">
+            </main>
+
+
+        </div>
+        
     </div>
 
-    <main id="board">
-    </main>
-    </div>
-    
 </body>
+
 </html>

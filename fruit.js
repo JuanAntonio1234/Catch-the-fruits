@@ -1,4 +1,4 @@
-function Fruit(x, y, board, fruits, game, type) {
+function Fruit(x, y, board, fruits, game, type, player) {
     let self = this
     this.type = type
     this.x = x
@@ -7,16 +7,20 @@ function Fruit(x, y, board, fruits, game, type) {
     this.direction = 1
     this.width = 50
     this.height = 50
+    this.player = player
     this.sprite = document.createElement('div')
 
     this.insertFruit = function () {
         if (this.type == "fruit") {
             this.sprite.setAttribute('class', 'fruit')
-        } else if(this.type == "bomb") {
+        } else if (this.type == "bomb") {
             this.sprite.setAttribute('class', 'bomb')
         }
-        else{
+        else if (this.type == "goldenApple") {
             this.sprite.setAttribute("class", "goldenApple")
+        }
+        else if (this.type == "iceCream") {
+            this.sprite.setAttribute("class", "iceCream")
         }
 
         this.sprite.style.left = this.x + 'px'
@@ -38,12 +42,12 @@ function Fruit(x, y, board, fruits, game, type) {
     this.removeFruit = function (idx) {
         if (this.y + 10 >= 750) {
             fruits.shift()
-            if(this.type != "bomb" && this.type != "goldenApple"){
+            if (this.type != "bomb" && this.type != "goldenApple") {
                 let currentComboHtml = document.getElementById("Combo")
                 currentComboHtml.innerText = ("Combo: 0")
                 game.currentCombo = 0;
             }
-            
+
         }
         else {
             fruits.splice(idx, 1)
@@ -62,29 +66,39 @@ function Fruit(x, y, board, fruits, game, type) {
             if (this.type == "fruit") {
                 game.currentCombo += 1
                 game.addScore("apple")
-               
+
                 score_html.innerText = "Score: " + game.score
-                
+
                 combo_html.innerText = "Combo: " + game.currentCombo
-                this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
-            }else if(this.type == "bomb"){
+                this.removeFruit(fruits.indexOf(this))
+            }
+            else if (this.type == "bomb") {
+                this.player.health -= 20;
                 game.currentCombo = 0
                 game.addScore("bomb")
 
                 score_html.innerText = "Score: " + game.score
-                
-                combo_html.innerText = "Combo: " + game.currentCombo
-                this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
 
+                combo_html.innerText = "Combo: " + game.currentCombo
+                this.removeFruit(fruits.indexOf(this))
             }
-            else{
+            else if (this.type === "goldenApple") {
                 game.currentCombo += 1
                 game.addScore("golden_apple")
-               
+
                 score_html.innerText = "Score: " + game.score
-                
+
                 combo_html.innerText = "Combo: " + game.currentCombo
-                this.removeFruit(fruits.indexOf(this)) //Eliminamos la fruta que tocamos de la lista de frutas y del dom
+                this.removeFruit(fruits.indexOf(this))
+            }
+            else if (this.type === "iceCream") {
+                if (this.player.speed > 2) {
+                    this.player.speed -= 2
+                    setTimeout(() => {
+                        this.player.speed += 2;
+                      }, 4000);
+                    }
+                this.removeFruit(fruits.indexOf(this))
             }
         }
     }
