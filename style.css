@@ -12,7 +12,7 @@
 .goldenApple {
     width: 50px;
     height: 50px;
-    background-image: url(./images/goldenApple.webp);
+    background-image: url(images/goldenApple.webp);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -35,7 +35,7 @@
 body {
     margin: 0;
     padding: 0;
-    border-bottom: 30px solid rgb(255, 255, 255); /* Agrega un borde inferior al body */
+    border-bottom: 30px solid rgb(255, 255, 255, 0.3); /* Agrega un borde inferior al body */
 }
 
 #puntuacion {
@@ -43,7 +43,7 @@ body {
     margin: 0 auto;
     width: 300px;
     border: solid 1px red;
-    font-size: 15px;
+    font-size: 25px;
     font-family: 'Anton', sans-serif;
     background-image: url("https://i.pinimg.com/originals/ef/5e/4b/ef5e4b4d024c66b42311e337ae8ab4cc.gif");
     background-size: cover;
@@ -57,16 +57,14 @@ h1, h2 {
     margin: 0;
 }
 #board {
+    position: relative;
     width: 500px;
     height: 800px;
     background-image: url("https://i.redd.it/aj4wg4z9u9f71.png");
     background-size: cover;
-    position: relative;
-    border-width: 30px; /* Agrega un ancho al borde */
-    border-style: solid; /* Establece el estilo del borde */
-    border-color: transparent; /* Establece el color del borde transparente */
-    border-radius: 50px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Agrega una sombra en el lado inferior derecho */
+    border: 30px rgb(155, 155, 155) groove;
+    border-radius: 50px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     margin: 0 auto;
 }
 
@@ -99,52 +97,119 @@ h1, h2 {
     bottom: 10%;
 }
 
-#bolas{
-    border: 3px solid red;
-    height: 300px;
-    width: 300px;
+#bolas {
+    border: 3px solid rgb(255, 255, 255);
+    height: 800px;
+    width: 550px;
     position: absolute;
-    right: 9%;
-    bottom: 10%;
+    top: 14%; /* Ajusta la distancia desde la parte superior según tus necesidades */
+    right: 4%; /* Coloca el elemento a la derecha del contenedor #board */
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-#superBola1{
-    background-color: greenyellow;
-    width: 30px;
-    height: 30px;
+
+#superBola1 {
+    display: none;
+    background-image: url("./images/1.png");
+    background-size: cover;
+    width: 110px;
+    height: 110px;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60); /* Agrega una sombra en el lado inferior derecho */
+    
+
 }
+
 #superBola2{
-    margin-left: 35px;
-    background-color: greenyellow;
-    width: 30px;
-    height: 30px;
+    display: none;
+    background-image: url("./images/2.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-left: 30px;
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
+   
 }
 #superBola3{
-    background-color: greenyellow;
-    width: 30px;
-    height: 30px;
+    display: none;
+    background-image: url("./images/3.png");
+    background-size: cover;
+    width: 110px;
+    height: 110px;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
+
 }
 #superBola4{
-    margin-left: 35px;
-
-    background-color: greenyellow;
-    width: 30px;
-    height: 30px;
+    display: none;
+    background-image: url("./images/4.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-left: 30px;
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
 }
 #superBola5{
-    background-color: greenyellow;
-    width: 30px;
-    height: 30px;
+    display: none;
+    background-image: url("./images/5.png");
+    background-size: cover;
+    width: 110px;
+    height: 110px;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
+
 }
 #superBola6{
-    margin-left: 35px;
-
-    background-color: greenyellow;
-    width: 30px;
-    height: 30px;
+    display: none;
+    background-image: url("./images/6.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-left: 30px;
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
 }
 #superBola7{
-    background-color: greenyellow;
-    width: 30px;
-    height: 30px;
+    display: none;
+    background-image: url("./images/7.png");
+    background-size: cover;
+    width: 110px;
+    height: 110px;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    border-radius: 90px; /* Establece el radio de las esquinas */
+    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
+
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./images/background2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;}
+
+
+    #superBola1, #superBola2, #superBola3, #superBola4, #superBola5, #superBola6, #superBola7{
+        animation: rotate 3s infinite; }
+        @keyframes rotate {
+            0% { transform: scale(0deg);}
+            100% { transform: rotate(360deg);}
+        }

@@ -16,6 +16,9 @@ let fruitSpawnInterval = 400 // modificar para cambiar la velocidad del juego
 
 
 function gameStart() {
+    setTimeout(function(){
+        fruits = []
+    }, 1000)
     player.insertPlayer()
     function gameLoop() {
         movePlayer()

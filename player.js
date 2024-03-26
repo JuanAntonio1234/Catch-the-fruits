@@ -1,5 +1,5 @@
 function Player(x, y, health, board) {
-    let self = this
+    this.self = this
     this.x = x
     this.y = y
     this.health = health;
@@ -20,13 +20,20 @@ function Player(x, y, health, board) {
     }
 
     this.move = function () {
-        let moveInX = self.x + self.speed * self.direction
+        let moveInX = this.x + this.speed * this.direction
         // Verificar límites horizontales como antes
         if (moveInX >= 0 && moveInX <= 420) {
-            self.x = moveInX
-            self.sprite.style.left = self.x + 'px'
+            this.x = moveInX
+            this.sprite.style.left = this.x + 'px'
         }
 
-        self.sprite.style.top = self.y + 'px'
+        this.sprite.style.top = this.y + 'px'
+    }
+
+    this.relocatePlayer = function(x, y){
+        this.x = x
+        this.y = y
+        this.sprite.style.left = x + 'px'
+        this.sprite.style.top = y + 'px'
     }
 }
