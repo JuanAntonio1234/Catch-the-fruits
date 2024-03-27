@@ -151,6 +151,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
         game.superBalls = 0;
 
         //recolocamos al jugador en su sitio y lo curamos.
+        player.sprite.style.backgroundImage = "url('./images/goku.png')";
         player.health = 100
         player.direction = 0;
         player.relocatePlayer(225, 700)

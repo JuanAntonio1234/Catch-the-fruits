@@ -38,7 +38,7 @@ function Player(x, y, health, board) {
     }
 
      this.transformar = function(game){
-        if(game.score > 0 && game.score < 2000){
+        if(game.score >= 0 && game.score < 2000){
             this.sprite.style.backgroundImage = "url('./images/goku.png')";
         }
         else if (game.score >=  2000 && game.score < 6000){

@@ -2,7 +2,7 @@ function Game() {
     this.score = 0;
     this.combo = 0;
     this.superBalls = 0;
-    this.comboForSuperBall = 10
+    this.comboForSuperBall = 20
 
 
     this.addScore = function (type) {
