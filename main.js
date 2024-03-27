@@ -25,7 +25,7 @@ function gameStart() {
 
 
 function movePlayer() {
-        player.move() 
+    player.move()
 }
 
 
@@ -33,43 +33,98 @@ function createFruits() {
     let coordX = Math.floor(Math.random() * 10) * 50
     let randomFruitType = Math.floor(Math.random() * 20) + 1
     let fruit;
-    if(randomFruitType >= 0 && randomFruitType <=15){
+    if (randomFruitType >= 0 && randomFruitType <= 15) {
         fruit = new Fruit(coordX, 0, board, fruits, game, "fruit", player)
     }
-    else if(randomFruitType <=17 && randomFruitType >15){
+    else if (randomFruitType <= 17 && randomFruitType > 15) {
         fruit = new Fruit(coordX, 0, board, fruits, game, "goldenApple", player)
     }
-    else if(randomFruitType === 18 || randomFruitType === 19){
+    else if (randomFruitType === 18 || randomFruitType === 19) {
         fruit = new Fruit(coordX, 0, board, fruits, game, "iceCream", player)
     }
-    else{
+    else {
         fruit = new Fruit(coordX, 0, board, fruits, game, "bomb", player)
     }
-    
+
     fruit.insertFruit()
     fruits.push(fruit)
 }
 
 window.addEventListener('keydown', function (e) {
     switch (e.key) {
-        case 'a':
-            player.direction = - 1
-            // player.move()
-            break
-        case 'd':
-            player.direction = 1
-            break
         case 'ArrowLeft':
-            player.direction = -1
+            if (e.shiftKey) {
+                player.direction = -2
+            }
+            else {
+                player.direction = -1
+            }
             break
         case 'ArrowRight':
-            player.direction = 1
+            if (e.shiftKey) {
+                player.direction = 2
+            }
+            else {
+                player.direction = 1
+            }
             break
+        case "Shift":
+            player.direction *= 2
+            break;
     }
 })
 
 window.addEventListener('keyup', function (e) {
-    player.direction = 0
+    switch (e.key) {
+        case 'ArrowLeft':
+            if (player.direction < 0) {
+                player.direction = 0
+            }
+            break
+        case 'ArrowRight':
+            if (player.direction > 0) {
+                player.direction = 0
+            }
+            break
+    }
 })
-
+/* window.addEventListener("keydown", function (e) {
+  switch (e.key.toLocaleLowerCase()) {
+    case "a":
+      if (e.shiftKey) {
+        player.direction = -1;
+        player.speed = 8;
+      } else {
+        player.direction = -1;
+        player.speed = 5;
+      }
+      break;
+    case "arrowleft":
+      if (e.shiftKey) {
+        player.direction = -1;
+        player.speed = 8;
+      } else {
+        player.direction = -1;
+        player.speed = 5;
+      }
+      break;
+    case "d":
+      if (e.shiftKey) {
+        player.direction = 1;
+        player.speed = 8;
+      } else {
+        player.direction = 1;
+        player.speed = 5;
+      }
+      break;
+    case "arrowright":
+      if (e.shiftKey) {
+        player.direction = 1;
+        player.speed = 8;
+      } else {
+        player.direction = 1;
+        player.speed = 5;
+      }
+  }
+}); */
 gameStart()
