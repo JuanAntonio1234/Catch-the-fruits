@@ -5,20 +5,11 @@ let timerId
 let spawnId
 let fruits = []
 let lastFruitSpawnTime = Date.now()
-let game = new Game()
+let game = new Game(player)
 let fruitSpawnInterval = 400 // modificar para cambiar la velocidad del juego
-
-// function gameStartaddd) {
-//     player.insertPlayer()
-//     timerId = setInterval(movePlayer, 25)
-//     // spawnId = setInterval(createEnemies, 3000)
-// }
 
 
 function gameStart() {
-    setTimeout(function(){
-        fruits = []
-    }, 1000)
     player.insertPlayer()
     function gameLoop() {
         movePlayer()
@@ -33,17 +24,8 @@ function gameStart() {
 }
 
 
-
 function movePlayer() {
-        player.move()
-
-        /* clearInterval(timerId)
-        clearInterval(spawnId)
-        fruits.forEach(function (fruit) {
-            clearInterval(fruit.timerId)
-        })
-        // window.alert('Game Over!!!') */
-    
+        player.move() 
 }
 
 
@@ -83,22 +65,11 @@ window.addEventListener('keydown', function (e) {
         case 'ArrowRight':
             player.direction = 1
             break
-
-        // player.move()
-        // case 'w':
-        //     player.directionY = - 1
-        //     // player.move()
-        //     break
-        // case 's':
-        //     player.directionY = 1
-        //     // player.move()
-        //     break
     }
 })
 
 window.addEventListener('keyup', function (e) {
     player.direction = 0
-    // player.directionY = 0
 })
 
 gameStart()

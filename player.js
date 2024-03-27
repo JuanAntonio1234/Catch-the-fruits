@@ -36,4 +36,16 @@ function Player(x, y, health, board) {
         this.sprite.style.left = x + 'px'
         this.sprite.style.top = y + 'px'
     }
+
+     this.transformar = function(game){
+        if(game.score > 0 && game.score < 2000){
+            this.sprite.style.backgroundImage = "url('./images/goku.png')";
+        }
+        else if (game.score >=  2000 && game.score < 6000){
+            this.sprite.style.backgroundImage = "url('./images/goku-syj-4.png')";
+        }
+        else{
+            this.sprite.style.backgroundImage = "url('./images/goku-syj-god.png')";
+        }
+    } 
 }
