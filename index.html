@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Catch the Balls!</title>
     <link rel="stylesheet" href="style.css">
     <script src="music.js" defer></script>
-    <script src="fruit.js" defer></script>
     <script src="game.js"></script>
+    <script src="fruit.js" defer></script>
     <script src="player.js" defer></script>
     <script src="main.js" defer></script>
     <!-- Fuente -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E"/>
+    <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
@@ -21,42 +21,59 @@
 </head>
 
 <body>
-    <div id="globalBackground">
-        <div id="puntuacion">
-            <div>
-                <audio id="musica" autoplay loop>
-                    <source src="./music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
-                    Tu navegador no soporta el elemento de audio.
-                </audio>
-            </div>
+    <div id="caja de arriba">
+        <div>
+            <audio id="musica" autoplay loop>
+                <source src="./music/AdhesiveWombat - Night Shade.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+        <button onclick id="reproducirMusica()">Play</button>
+        <button onclick id="pausarMusica()">Pause</button>
 
-            <button onclick="reproducirMusica()">Play</button>
-            <button onclick="pausarMusica()">Pause</button>
+
+
+    </div>
+
+    <div id="caja">
+        <div id="characterprofile">Character Profile</div>
+        <div id="puntuacion">
             <h1 id="Score">Score: 0</h1>
             <h2 id="Combo">Combo: 0</h2>
         </div>
-
-        <div>
-            <div id="vida">
-                
-            </div>
-
-            <div id="bolas">
-                <div id="superBola1"></div>
-                <div id="superBola2"></div>
-                <div id="superBola3"></div>
-                <div id="superBola4"></div>
-                <div id="superBola5"></div>
-                <div id="superBola6"></div>
-                <div id="superBola7"></div>
-            </div>
-    
-            <main id="board">
-            </main>
-
-
+        <div class="totalifes">
+                <h3 class="texto">LIFE: </h3>
+            <div id="life"></div>
         </div>
-        
+        <div id="stats">
+            <div id="DragonBalls">Dragon Balls Collected: 0</div><br>
+            <div id="DragonBallsMissed">Dragon Balls Missed: 0</div><br>
+            <div id="goldenApples"> Golden Apples Eaten: 0</div><br>
+            <div id="goldenApplesMissed"> Golden Apples Missed: 0</div><br>
+            <div id="iceCreams"> Ice Creams Eaten: 0</div><br>
+            <div id="iceCreamsDodged"> Ice Creams Dodged: 0</div><br>
+            <div id="bombsEaten"> Bombs Eaten: 0</div><br>
+            <div id="bombsDodged">Bombs Dodged: 0</div>
+        </div>
+
+        <div id="cajabolas">
+            <div id="superBola1"></div>
+            <div id="superBola2"></div>
+            <div id="superBola3"></div>
+            <div id="superBola4"></div>
+            <div id="superBola5"></div>
+            <div id="superBola6"></div>
+            <div id="superBola7"></div>
+        </div>
+
+    </div>
+
+    <main id="board">
+    </main>
+
+
+    </div>
+
     </div>
 
 </body>

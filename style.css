@@ -1,3 +1,8 @@
+@font-face{
+    font-family: "Saiyan-Sans";
+    src:
+    local("Saiyan-Sans"),url(./Saiyan-Sans.ttf)
+}
 .bomb {
     width: 50px;
     height: 50px;
@@ -32,28 +37,25 @@
 }
 
 
-body {
-    margin: 0;
-    padding: 0;
-    border-bottom: 30px solid rgb(255, 255, 255, 0.3); /* Agrega un borde inferior al body */
-}
-
 #puntuacion {
-    text-align: center;
-    margin: 0 auto;
-    width: 300px;
-    border: solid 1px red;
-    font-size: 25px;
-    font-family: 'Anton', sans-serif;
-    background-image: url("https://i.pinimg.com/originals/ef/5e/4b/ef5e4b4d024c66b42311e337ae8ab4cc.gif");
+    font-family: "Saiyan-Sans";
+    letter-spacing: 2px;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    width: 500px;
+    border: solid 3px red;
+    font-size: 30px;
+    background-image: linear-gradient(to bottom, rgb(6, 59, 173), rgb(255, 136, 0)); 
     background-size: cover;
-    background-position: center;
+    background-position: left;
     color: transparent;
-    background-clip: text;
     -webkit-background-clip: text;
 }
 
-h1, h2 {
+
+h1 {
+    margin: 0;
+}
+h2 {
     margin: 0;
 }
 #board {
@@ -70,7 +72,7 @@ h1, h2 {
 
 
 #player {
-    width:100px;
+    width: 100px;
     height:100px;
     background-image: url(./images/goku.png);
     background-size: contain;
@@ -87,27 +89,76 @@ h1, h2 {
     position: absolute;
 }
 
-
-#vida{
-    border: 3px solid red;
-    height: 700px;
-    width: 50px;
-    position: absolute;
-    left: 31%;
-    bottom: 10%;
-}
-
-#bolas {
+#caja {
     border: 3px solid rgb(255, 255, 255);
-    height: 800px;
-    width: 550px;
+    height: 980px;
+    width: 620px;
     position: absolute;
-    top: 14%; /* Ajusta la distancia desde la parte superior según tus necesidades */
+    top: 1%; /* Ajusta la distancia desde la parte superior según tus necesidades */
     right: 4%; /* Coloca el elemento a la derecha del contenedor #board */
     border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 196, 3, 0.199);
+}
+#cajabolas {
+    height: 730px;
+    width: 120px;
+    border: 10px solid rgb(0, 238, 255);
+    position: absolute;
+    float: left;
 }
 
+#characterprofile {
+    text-align: center;
+    font-family: "Saiyan-Sans";
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    font-size: 40px;
+    border-radius: 100px; 
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 127, 7, 0.877);
+    max-width: 80%; 
+    margin: 0 auto; 
+}
+
+.totalifes {
+    border: 2px solid black;
+    height: 80px;
+    width: 400px;
+    margin:25px;
+    float: right;
+}
+
+#life {
+    background-image: url("./images/life1.png");
+    background-size: cover;
+    width: 150px;
+    height: 50px;
+    display: inline-block; /* Cambia el comportamiento del div a inline-block */
+    vertical-align: top; /* Alinea el div verticalmente con respecto a los demás elementos */
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.texto {
+    font-family: "Saiyan-Sans";
+    display: inline-block;
+    height: 1px;
+    font-size: 40px;
+    margin: 20px
+}
+
+#stats{
+    margin: 25px;
+    float: right;
+    height: 610px;
+    width: 410px;
+    border: 2px solid black;
+}
+
+#DragonBalls, #goldenApples, #bombsDodged, #bombsEaten,
+#DragonBallsMissed, #goldenApplesMissed, #iceCreams, #iceCreamsDodged{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
 
 #superBola1 {
     display: none;
@@ -199,7 +250,7 @@ h1, h2 {
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-image: url("./images/background2.png");
     background-size: cover;

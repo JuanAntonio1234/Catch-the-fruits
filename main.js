@@ -1,6 +1,6 @@
 let board = document.getElementById('board')
 let wall = document.getElementById('wall')
-let player = new Player(225, 700, 100, board)
+let player = new Player(225, 700, 3, board)
 let timerId
 let spawnId
 let fruits = []

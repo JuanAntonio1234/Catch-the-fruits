@@ -27,7 +27,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
         board.appendChild(this.sprite)
     }
 
-    this.move = function () {
+    this.move = function () { 
         self.checkCollision()
         let moveInY = self.y + self.speed * self.direction
         if (moveInY >= 0 && moveInY <= 750) {
@@ -35,7 +35,22 @@ function Fruit(x, y, board, fruits, game, type, player) {
             self.sprite.style.top = self.y + 'px'
         }
         if (moveInY >= 750) {
+            switch (self.type){
+                case "fruit":
+                    game.dragonBallsMissed++
+                    break;
+                case "bomb":
+                    game.bombsDodged++
+                    break;
+                case "iceCream":
+                    game.iceCreamsDodged++
+                    break;
+                case "goldenApple":
+                    game.goldenApplesMissed++
+                    break;
+            }
             self.removeFruit()
+            game.showStats()
         }
     }
     
@@ -68,14 +83,16 @@ function Fruit(x, y, board, fruits, game, type, player) {
             if (this.type == "fruit") {
                 game.combo += 1
                 game.addScore("apple")
-
+                game.dragonBallsCollected++
                 score_html.innerText = "Score: " + game.score
 
                 combo_html.innerText = "Combo: " + game.combo
                 this.removeFruit(fruits.indexOf(this))
             }
             else if (this.type == "bomb") {
-                player.health -= 60;
+                game.bombsEaten++;
+                player.health--;
+                game.showLifes()
                 if (game.superBalls > 0) {
                     game.superBalls--
                     this.showBalls()
@@ -94,16 +111,19 @@ function Fruit(x, y, board, fruits, game, type, player) {
                 }
             }
             else if (this.type === "goldenApple") {
+                game.goldenApplesEaten++
                 game.addScore("golden_apple")
-                if (player.health < 100) {
-                    player.health += 25
+                if (player.health < 3) {
+                    player.health++
+                    game.showLifes()
                 }
-                score_html.innerText = "Score: " + game.score
 
+                score_html.innerText = "Score: " + game.score
                 combo_html.innerText = "Combo: " + game.combo
                 this.removeFruit(fruits.indexOf(this))
             }
             else if (this.type === "iceCream") {
+                game.iceCreams++;
                 if (player.speed > 2) {
                     player.speed -= 2
                     setTimeout(() => {
@@ -115,10 +135,13 @@ function Fruit(x, y, board, fruits, game, type, player) {
 
             //Transformación goku
             player.transformar(game)
+
             //comprobación superBola
             if(game.combo === game.comboForSuperBall){
                 game.addSuperBall(fruits[0]);
             }
+
+            game.showStats();
             
         }
     }
@@ -136,6 +159,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
         let superBola5 = document.getElementById("superBola5")
         let superBola6 = document.getElementById("superBola6")
         let superBola7 = document.getElementById("superBola7")
+        let life = document.getElementById("life")
 
         superBola1.style.display = "none"
         superBola2.style.display = "none"
@@ -144,15 +168,26 @@ function Fruit(x, y, board, fruits, game, type, player) {
         superBola5.style.display = "none"
         superBola6.style.display = "none"
         superBola7.style.display = "none"
+        life.style.backgroundImage = "url('./images/life1.png')"
 
         //Reiniciamos los atributos de game.
         game.combo = 0;
         game.score = 0;
-        game.superBalls = 0;
+        game.superBalls = 0
+        game.dragonBallsCollected = 0;
+        game.dragonBallsMissed = 0;
+        game.goldenApplesEaten = 0;
+        game.goldenApplesMissed = 0;
+        game.iceCreams = 0;
+        game.iceCreamsDodged = 0;
+        game.bombsDodged = 0;
+        game.bombEaten = 0;
+
+        game.showStats();
 
         //recolocamos al jugador en su sitio y lo curamos.
         player.sprite.style.backgroundImage = "url('./images/goku.png')";
-        player.health = 100
+        player.health = 3
         player.direction = 0;
         player.relocatePlayer(225, 700)
 

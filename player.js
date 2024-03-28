@@ -7,7 +7,6 @@ function Player(x, y, health, board) {
     this.direction = 0
     this.width = 100
     this.height = 100;
-    this.vida = 100;
 
     this.sprite = document.createElement('div')
     this.velocityY = 0
@@ -39,7 +38,7 @@ function Player(x, y, health, board) {
 
      this.transformar = function(game){
         if(game.score >= 0 && game.score < 2000){
-            this.sprite.style.backgroundImage = "url('./images/goku-ultraInstinct.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku.png')";
         }
         else if (game.score >=  2000 && game.score < 6000){
             this.sprite.style.backgroundImage = "url('./images/adultGoku.png')";

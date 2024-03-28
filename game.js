@@ -1,8 +1,16 @@
-function Game() {
+function Game(player) {
     this.score = 0;
     this.combo = 0;
     this.superBalls = 0;
-    this.comboForSuperBall = 20
+    this.comboForSuperBall = 10 // Modificar esto para que necesites menos combo por bola grande.
+    this.dragonBallsCollected = 0;
+    this.dragonBallsMissed = 0;
+    this.goldenApplesEaten = 0;
+    this.goldenApplesMissed = 0;
+    this.iceCreams = 0;
+    this.iceCreamsDodged = 0;
+    this.bombsDodged = 0;
+    this.bombsEaten = 0;
 
 
     this.addScore = function (type) {
@@ -43,52 +51,41 @@ function Game() {
     }
 
 
-    /*     this.restartGame = function () {
-            //Reiniciamos todo lo relacionado con el HTML
-            let score_html = document.getElementById("Score")
-            let combo_html = document.getElementById("Combo")
-            score_html.innerText = "Score: 0"
-            combo_html.innerText = "Combo: 0"
-            let superBola1 = document.getElementById("superBola1")
-            let superBola2 = document.getElementById("superBola2")
-            let superBola3 = document.getElementById("superBola3")
-            let superBola4 = document.getElementById("superBola4")
-            let superBola5 = document.getElementById("superBola5")
-            let superBola6 = document.getElementById("superBola6")
-            let superBola7 = document.getElementById("superBola7")
-    
-            superBola1.style.display = "none"
-            superBola2.style.display = "none"
-            superBola3.style.display = "none"
-            superBola4.style.display = "none"
-            superBola5.style.display = "none"
-            superBola6.style.display = "none"
-            superBola7.style.display = "none"
-    
-            //Reiniciamos los atributos de game.
-            this.combo = 0;4
-            this.score = 0;
-            this.superBalls = 0;
-    
-            //recolocamos al jugador en su sitio y lo curamos.
-            player.health = 100
-            player.direction = 0;
-            player.relocatePlayer(225, 700)
-    
-            //Limpiamos el tablero y vaciamos el array de frutas
-            let frutasHTML = document.getElementsByClassName("ball");
-            let frutasArray = Array.from(frutasHTML);
-            frutasArray.forEach(function (element) {
-                if (element.parentNode.contains(element)) { // Verificar si el elemento es hijo de su nodo padre
-                    element.parentNode.removeChild(element);
-                }
-            });
-    
-            fruits.forEach(function(fruta){
-                //GRACIAS ALMA POR DECIRME QUE ERA EL TIMER ID
-                clearInterval(fruta.timerId)
-            })
-            fruits = []
-        } */
-}
+    this.showLifes = function(){
+        let lifes = document.getElementById("life")
 
+        if(player.health === 3){
+            lifes.style.backgroundImage = "url('./images/life1.png')"
+        }
+        else if(player.health === 2){
+            lifes.style.backgroundImage = "url('./images/life2.png')"
+        }
+        else if(player.health === 1){
+            lifes.style.backgroundImage = "url('./images/life3.png')"
+        }
+        else if(player.health === 3){
+            lifes.style.backgroundImage = "url('./images/life4.png')"
+        }
+    }
+
+    this.showStats = function(){
+        let dragonBalls = document.getElementById("DragonBalls")
+        let dragonBallsMissed = document.getElementById("DragonBallsMissed")
+        let goldenApples = document.getElementById("goldenApples")
+        let goldenApplesMissed = document.getElementById("goldenApplesMissed")
+        let iceCreams = document.getElementById("iceCreams")
+        let iceCreamsDodged = document.getElementById("iceCreamsDodged")
+        let bombsDodged = document.getElementById("bombsDodged")
+        let bombsEaten = document.getElementById("bombsEaten")
+
+        dragonBalls.innerText = "Dragon Balls Collected: " + this.dragonBallsCollected
+        dragonBallsMissed.innerText = "Dragon Balls Missed: " + this.dragonBallsMissed
+        goldenApples.innerText = "Golden Apples Eaten: " + this.goldenApplesEaten;
+        goldenApplesMissed.innerText = "Golden Apples Missed: " + this.goldenApplesMissed;
+        iceCreams.innerText = "Ice Creams Eaten: " + this.iceCreams;
+        iceCreamsDodged.innerText = "Ice Creams Dodged: " + this.iceCreamsDodged;
+        bombsDodged.innerText = "Bombs Dodged: " + this.bombsDodged;
+        bombsEaten.innerText = "Bombs Eaten: " + this.bombsEaten
+    }
+
+}
