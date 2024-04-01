@@ -38,28 +38,25 @@ function Player(x, y, health, board) {
 
      this.transformar = function(game){
         if(game.score >= 0 && game.score < 2000){
-            this.sprite.style.backgroundImage = "url('./images/goku.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku1.png')";
         }
         else if (game.score >=  2000 && game.score < 6000){
-            this.sprite.style.backgroundImage = "url('./images/adultGoku.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku2.png')";
         }
         else if (game.score >=  6000 && game.score < 18000){
-            this.sprite.style.backgroundImage = "url('./images/goku-ssj-1.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku3.png')";
         }
         else if (game.score >=  18000 && game.score < 33000){
-            this.sprite.style.backgroundImage = "url('./images/goku-ssj-3.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku4.png')";
         }
         else if (game.score >=  33000 && game.score < 50000){
-            this.sprite.style.backgroundImage = "url('./images/goku-ssj-4.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku5.png')";
         }
         else if (game.score >=  50000 && game.score < 75000){
-            this.sprite.style.backgroundImage = "url('./images/goku-ssj-god.png')";
-        }
-        else if (game.score >=  75000 && game.score < 100000){
-            this.sprite.style.backgroundImage = "url('./images/goku-ssj-blue.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku6.png')";
         }
         else{
-            this.sprite.style.backgroundImage = "url('./images/goku-ultraInstinct.png')";
+            this.sprite.style.backgroundImage = "url('./images/goku7.png')";
         }
 
 
