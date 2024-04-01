@@ -238,16 +238,6 @@
     color: orange;
     -webkit-text-stroke: 1px rgb(73, 39, 0);
 } 
-#iceCreams{
-    background-image: url("./images/heladowebp");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 45px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
-} 
 #iceCreamsDodged {
     background-image: url("./images/heladowebp");
     background-size: 40px 40px; 
