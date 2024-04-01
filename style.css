@@ -1,326 +1,331 @@
-@font-face{
-    font-family: "Saiyan-Sans";
-    src:
-    local("Saiyan-Sans"),url(./Saiyan-Sans.ttf)
+@font-face {
+  font-family: "Saiyan-Sans";
+  src: local("Saiyan-Sans"), url(./Saiyan-Sans.ttf);
 }
 .bomb {
-    width: 50px;
-    height: 50px;
-    background-image: url(./images/antibola.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    /* top: 750px;
+  width: 50px;
+  height: 50px;
+  background-image: url(./images/antibola.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  /* top: 750px;
     left: 225px; */
 }
 
 .goldenApple {
-    width: 50px;
-    height: 50px;
-    background-image: url(./images/onigiri.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    /* top: 750px;
+  width: 50px;
+  height: 50px;
+  background-image: url(./images/onigiri.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  /* top: 750px;
     left: 225px; */
 }
 
-.iceCream{
-    width: 50px;
-    height: 50px;
-    background-image: url(./images/helado.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    /* top: 750px;
+.iceCream {
+  width: 50px;
+  height: 50px;
+  background-image: url(./images/helado.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  /* top: 750px;
     left: 225px; */
 }
 
 #board {
-    position: relative;
-    width: 500px;
-    height: 800px;
-    background-image: url("https://i.redd.it/aj4wg4z9u9f71.png");
-    background-size: cover;
-    border: 30px rgb(155, 155, 155) groove;
-    border-radius: 50px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    margin: 0 auto;
+  position: relative;
+  width: 500px;
+  height: 800px;
+  background-image: url("https://i.redd.it/aj4wg4z9u9f71.png");
+  background-size: cover;
+  border: 30px rgb(155, 155, 155) groove;
+  border-radius: 50px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
 }
 
 #endGameStats {
-    position: relative;
-    width: 500px;
-    height: 800px;
-    background-color: white;
-    border: 30px rgb(155, 155, 155) groove;
-    border-radius: 50px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    margin: 0 auto;
+  position: relative;
+  width: 500px;
+  height: 800px;
+  background-color: white;
+  border: 30px rgb(155, 155, 155) groove;
+  border-radius: 50px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
 }
 
-
 #player {
-    width: 100px;
-    height:100px;
-    background-image: url(./images/goku1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url(./images/goku1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
 }
 
 .fruit {
-    width: 50px;
-    height: 50px;
-    background-image: url(./images/boladedragon.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url(./images/boladedragon.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
 }
-#playButton, #pauseButton {
-    padding: 17px 40px;
-    border-radius: 10px;
-    border: 0;
-    background-color: rgb(255, 146, 56);
-    letter-spacing: 1.5px;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    box-shadow: rgb(201, 147, 46) 0px 10px 0px 0px;
-    color: hsl(0, 0%, 100%);
-    cursor: pointer;
-    padding: 17px 40px;
-  }
-  
+#playButton,
+#pauseButton {
+  padding: 17px 40px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 146, 56);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 147, 46) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  padding: 17px 40px;
+}
 
 #caja {
-    border: 3px solid rgb(255, 255, 255);
-    height: 980px;
-    width: 620px;
-    position: absolute;
-    top: 1%; /* Ajusta la distancia desde la parte superior según tus necesidades */
-    right: 4%; /* Coloca el elemento a la derecha del contenedor #board */
-    border-radius: 50px;
-    background-color: rgba(255, 196, 3, 0.199);
+  border: 3px solid rgb(255, 255, 255);
+  height: 980px;
+  width: 620px;
+  position: absolute;
+  top: 1%; /* Ajusta la distancia desde la parte superior según tus necesidades */
+  right: 4%; /* Coloca el elemento a la derecha del contenedor #board */
+  border-radius: 50px;
+  background-color: rgba(255, 196, 3, 0.199);
 }
 
 #cajabolas {
-    height: 730px;
-    width: 120px;
-    position: absolute;
-    float: left;
+  height: 730px;
+  width: 120px;
+  position: absolute;
+  float: left;
 }
 
 #characterprofile {
-    text-align: center;
-    font-family: "Saiyan-Sans";
-    -webkit-text-stroke: 2px rgb(0, 0, 0);
-    font-size: 40px;
-    border-radius: 100px; 
-    color: rgb(255, 255, 255);
-    background-color: rgba(255, 127, 7, 0.877);
-    max-width: 80%; 
-    margin: 0 auto; 
+  text-align: center;
+  font-family: "Saiyan-Sans";
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+  font-size: 40px;
+  border-radius: 100px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 127, 7, 0.877);
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 #Score {
-    font-family: "Saiyan-Sans";
-    letter-spacing: 2px;
-    font-size: 80px;
-    color: rgb(36, 4, 214);
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
-    margin: 0 auto; /* Para centrar horizontalmente */
-    text-align: center; /* Para centrar el texto */
+  font-family: "Saiyan-Sans";
+  letter-spacing: 2px;
+  font-size: 80px;
+  color: rgb(36, 4, 214);
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  margin: 0 auto; /* Para centrar horizontalmente */
+  text-align: center; /* Para centrar el texto */
 }
 
 #Combo {
-    font-family: "Saiyan-Sans";
-    letter-spacing: 2px;
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
-    color: rgb(250, 152, 6);
-    width: 615px;
-    font-size: 80px;
-    margin: 0 auto; /* Para centrar horizontalmente */
-    text-align: center; /* Para centrar el texto */
+  font-family: "Saiyan-Sans";
+  letter-spacing: 2px;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  color: rgb(250, 152, 6);
+  width: 615px;
+  font-size: 80px;
+  margin: 0 auto; /* Para centrar horizontalmente */
+  text-align: center; /* Para centrar el texto */
 }
 
 .totalifes {
-    height: 80px;
-    width: 400px;
-    margin:25px;
-    float: right;
+  height: 80px;
+  width: 400px;
+  margin: 25px;
+  float: right;
 }
 
 #life {
-    background-image: url("./images/life1.png");
-    background-size: cover;
-    width: 160px;
-    height: 50px;
-    display: inline-block; 
-    margin-left: 20px;
-    margin-top: 15px;
+  background-image: url("./images/life1.png");
+  background-size: cover;
+  width: 160px;
+  height: 50px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 
 .texto {
-    font-family: "Saiyan-Sans";
-    display: inline-block;
-    height: 1px;
-    font-size: 45px;
-    margin: 20px
+  font-family: "Saiyan-Sans";
+  display: inline-block;
+  height: 1px;
+  font-size: 45px;
+  margin: 20px;
 }
 
-#stats{
-    margin-top: 0;
-    float: right;
-    height: 600px;
-    width: 470px;
+#stats {
+  margin-top: 0;
+  float: right;
+  height: 600px;
+  width: 470px;
 }
 
-#DragonBalls, #DragonBallsMissed {
-    background-image: url("./images/3.png");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 40px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
+#DragonBalls,
+#DragonBallsMissed {
+  background-image: url("./images/3.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  font-family: "Saiyan-Sans";
+  font-size: 40px;
+  padding-left: 40px;
+  color: orange;
+  -webkit-text-stroke: 1px rgb(73, 39, 0);
 }
 
-#goldenApples, #goldenApplesMissed{
-    background-image: url("./images/onigiri.png");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 45px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
+#goldenApples,
+#goldenApplesMissed {
+  background-image: url("./images/onigiri.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  font-family: "Saiyan-Sans";
+  font-size: 40px;
+  padding-left: 45px;
+  color: orange;
+  -webkit-text-stroke: 1px rgb(73, 39, 0);
+}
+#bombsDodged,
+#bombsEaten {
+  background-image: url("./images/antibola.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  font-family: "Saiyan-Sans";
+  font-size: 40px;
+  padding-left: 45px;
+  color: orange;
+  -webkit-text-stroke: 1px rgb(73, 39, 0);
+}
 
-} 
-#bombsDodged, #bombsEaten{
-    background-image: url("./images/antibola.png");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 45px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
-
-} 
-
-#iceCreams, #iceCreamsDodged{
-    background-image: url("./images/helado.webp");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 45px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
-} 
+#iceCreams,
+#iceCreamsDodged {
+  background-image: url("./images/helado.webp");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  font-family: "Saiyan-Sans";
+  font-size: 40px;
+  padding-left: 45px;
+  color: orange;
+  -webkit-text-stroke: 1px rgb(73, 39, 0);
+}
 
 #superBola1 {
-    display: none;
-    background-image: url("./images/1.png");
-    background-size: cover;
-    width: 110px;
-    height: 110px;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60); /* Agrega una sombra en el lado inferior derecho */
-    
-
+  display: none;
+  background-image: url("./images/1.png");
+  background-size: cover;
+  width: 110px;
+  height: 110px;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6); /* Agrega una sombra en el lado inferior derecho */
 }
 
-#superBola2{
-    display: none;
-    background-image: url("./images/2.png");
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    margin-left: 30px;
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
-   
+#superBola2 {
+  display: none;
+  background-image: url("./images/2.png");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  margin-left: 30px;
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6);
 }
-#superBola3{
-    display: none;
-    background-image: url("./images/3.png");
-    background-size: cover;
-    width: 110px;
-    height: 110px;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
-
+#superBola3 {
+  display: none;
+  background-image: url("./images/3.png");
+  background-size: cover;
+  width: 110px;
+  height: 110px;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6);
 }
-#superBola4{
-    display: none;
-    background-image: url("./images/4.png");
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    margin-left: 30px;
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
+#superBola4 {
+  display: none;
+  background-image: url("./images/4.png");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  margin-left: 30px;
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6);
 }
-#superBola5{
-    display: none;
-    background-image: url("./images/5.png");
-    background-size: cover;
-    width: 110px;
-    height: 110px;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
-
+#superBola5 {
+  display: none;
+  background-image: url("./images/5.png");
+  background-size: cover;
+  width: 110px;
+  height: 110px;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6);
 }
-#superBola6{
-    display: none;
-    background-image: url("./images/6.png");
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    margin-left: 30px;
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
+#superBola6 {
+  display: none;
+  background-image: url("./images/6.png");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  margin-left: 30px;
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6);
 }
-#superBola7{
-    display: none;
-    background-image: url("./images/7.png");
-    background-size: cover;
-    width: 110px;
-    height: 110px;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    border-radius: 90px; /* Establece el radio de las esquinas */
-    box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.60);
-
+#superBola7 {
+  display: none;
+  background-image: url("./images/7.png");
+  background-size: cover;
+  width: 110px;
+  height: 110px;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border-radius: 90px; /* Establece el radio de las esquinas */
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6);
 }
 
 body {
-    margin: 0 auto;
-    padding: 0;
-    background-image: url("./images/background2.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;}
+  margin: 0 auto;
+  padding: 0;
+  background-image: url("./images/background2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-
-    #superBola1, #superBola2, #superBola3, #superBola4, #superBola5, #superBola6, #superBola7{
-        animation: rotate 3s infinite; }
-        @keyframes rotate {
-            0% { transform: scale(0deg);}
-            100% { transform: rotate(360deg);}
-        }
+#superBola1,
+#superBola2,
+#superBola3,
+#superBola4,
+#superBola5,
+#superBola6,
+#superBola7 {
+  animation: rotate 3s infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: scale(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
