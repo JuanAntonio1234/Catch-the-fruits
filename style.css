@@ -175,7 +175,7 @@
     width: 470px;
 }
 
-#DragonBalls {
+#DragonBalls, #DragonBallsMissed {
     background-image: url("./images/3.png");
     background-size: 40px 40px; 
     background-repeat: no-repeat;
@@ -186,7 +186,7 @@
     -webkit-text-stroke: 1px rgb(73, 39, 0);
 }
 
-#goldenApples{
+#goldenApples, #goldenApplesMissed{
     background-image: url("./images/onigiri.png");
     background-size: 40px 40px; 
     background-repeat: no-repeat;
@@ -197,7 +197,7 @@
     -webkit-text-stroke: 1px rgb(73, 39, 0);
 
 } 
-#bombsDodged{
+#bombsDodged, #bombsEaten{
     background-image: url("./images/antibola.png");
     background-size: 40px 40px; 
     background-repeat: no-repeat;
@@ -208,28 +208,9 @@
     -webkit-text-stroke: 1px rgb(73, 39, 0);
 
 } 
-#bombsEaten{
-    background-image: url("./images/antibola.png");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 45px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
-}
-#DragonBallsMissed{
-    background-image: url("./images/3.png");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 40px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
-} 
-#goldenApplesMissed{
-    background-image: url("./images/onigiri.png");
+
+#iceCreams, #iceCreamsDodged{
+    background-image: url("./images/helado.webp");
     background-size: 40px 40px; 
     background-repeat: no-repeat;
     font-family: "Saiyan-Sans";
@@ -238,16 +219,6 @@
     color: orange;
     -webkit-text-stroke: 1px rgb(73, 39, 0);
 } 
-#iceCreamsDodged {
-    background-image: url("./images/heladowebp");
-    background-size: 40px 40px; 
-    background-repeat: no-repeat;
-    font-family: "Saiyan-Sans";
-    font-size: 40px;
-    padding-left: 45px;
-    color: orange;
-    -webkit-text-stroke: 1px rgb(73, 39, 0);
-}
 
 #superBola1 {
     display: none;
