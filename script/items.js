@@ -14,8 +14,8 @@ function Fruit(x, y, board, fruits, game, type, player) {
       this.sprite.setAttribute("class", "ball fruit");
     } else if (this.type == "bomb") {
       this.sprite.setAttribute("class", "ball bomb");
-    } else if (this.type == "goldenApple") {
-      this.sprite.setAttribute("class", "ball goldenApple");
+    } else if (this.type == "Onigiri") {
+      this.sprite.setAttribute("class", "ball Onigiri");
     } else if (this.type == "iceCream") {
       this.sprite.setAttribute("class", "ball iceCream");
     }
@@ -32,7 +32,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
       self.y = moveInY;
       self.sprite.style.top = self.y + "px";
     }
-    if (moveInY >= 750) {
+    if (moveInY >= 750 && game.isRunning) {
       switch (self.type) {
         case "fruit":
           game.dragonBallsMissed++;
@@ -43,8 +43,8 @@ function Fruit(x, y, board, fruits, game, type, player) {
         case "iceCream":
           game.iceCreamsDodged++;
           break;
-        case "goldenApple":
-          game.goldenApplesMissed++;
+        case "Onigiri":
+          game.OnigirisMissed++;
           break;
       }
       self.removeFruit();
@@ -77,7 +77,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
       this.x + this.width > player.x &&
       this.y + this.height > player.y
     ) {
-      if (this.type == "fruit") {
+      if (this.type == "fruit" && game.isRunning) {
         game.combo += 1;
         game.addScore("apple");
         game.dragonBallsCollected++;
@@ -85,7 +85,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
 
         combo_html.innerText = "Combo: " + game.combo;
         this.removeFruit(fruits.indexOf(this));
-      } else if (this.type == "bomb") {
+      } else if (this.type == "bomb" && game.isRunning) {
         game.bombsEaten++;
         player.health--;
         game.showLifes();
@@ -101,13 +101,12 @@ function Fruit(x, y, board, fruits, game, type, player) {
         combo_html.innerText = "Combo: " + game.combo;
         this.removeFruit(fruits.indexOf(this));
         if (player.health <= 0) {
-          alert("You lost :(\nClick OK to play again.");
           this.showBalls();
-          this.restartGame();
+          game.finishGame("lose");
         }
-      } else if (this.type === "goldenApple") {
-        game.goldenApplesEaten++;
-        game.addScore("golden_apple");
+      } else if (this.type === "Onigiri" && game.isRunning) {
+        game.OnigirisEaten++;
+        game.addScore("Onigiri");
         if (player.health < 3) {
           player.health++;
           game.showLifes();
@@ -116,7 +115,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
         score_html.innerText = "Score: " + game.score;
         combo_html.innerText = "Combo: " + game.combo;
         this.removeFruit(fruits.indexOf(this));
-      } else if (this.type === "iceCream") {
+      } else if (this.type === "iceCream" && game.isRunning) {
         game.iceCreams++;
         if (player.speed > 2) {
           player.speed -= 2;
@@ -140,6 +139,14 @@ function Fruit(x, y, board, fruits, game, type, player) {
   };
 
   this.restartGame = function () {
+    let htmlImageDiv = document.getElementById("endGameImage")
+    htmlImageDiv.style.display = "none"
+
+    let board = document.getElementById("board");
+    board.style.display = "block"
+
+    fruitSpawnInterval = 300
+
     //Reiniciamos todo lo relacionado con el HTML
     let score_html = document.getElementById("Score");
     let combo_html = document.getElementById("Combo");
@@ -169,17 +176,17 @@ function Fruit(x, y, board, fruits, game, type, player) {
     game.superBalls = 0;
     game.dragonBallsCollected = 0;
     game.dragonBallsMissed = 0;
-    game.goldenApplesEaten = 0;
-    game.goldenApplesMissed = 0;
+    game.OnigirisEaten = 0;
+    game.OnigirisMissed = 0;
     game.iceCreams = 0;
     game.iceCreamsDodged = 0;
     game.bombsDodged = 0;
-    game.bombEaten = 0;
+    game.bombsEaten = 0;
 
     game.showStats();
 
     //recolocamos al jugador en su sitio y lo curamos.
-    player.sprite.style.backgroundImage = "url('./images/goku.png')";
+    player.sprite.style.backgroundImage = "url('./images/goku1.png')";
     player.health = 3;
     player.direction = 0;
     player.relocatePlayer(225, 700);
@@ -199,6 +206,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
       clearInterval(fruta.timerId);
     });
     fruits = [];
+    game.isRunning = true;
   };
 
   this.showBalls = function () {

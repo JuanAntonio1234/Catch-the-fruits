@@ -1,4 +1,6 @@
 let board = document.getElementById("board");
+let fruitSpawnInterval = 3000000; // modificar para cambiar la velocidad del juego
+
 let wall = document.getElementById("wall");
 let player = new Player(225, 700, 3, board);
 let timerId;
@@ -6,7 +8,6 @@ let spawnId;
 let fruits = [];
 let lastFruitSpawnTime = Date.now();
 let game = new Game(player);
-let fruitSpawnInterval = 300; // modificar para cambiar la velocidad del juego
 
 function gameStart() {
   player.insertPlayer();
@@ -37,7 +38,7 @@ function createFruits() {
   } else if (randomFruitType === 18 || randomFruitType === 19) {
     fruit = new Fruit(coordX, 0, board, fruits, game, "iceCream", player);
   } else {
-    fruit = new Fruit(coordX, 0, board, fruits, game, "goldenApple", player);
+    fruit = new Fruit(coordX, 0, board, fruits, game, "Onigiri", player);
   }
 
   fruit.insertFruit();
@@ -80,43 +81,10 @@ window.addEventListener("keyup", function (e) {
       break;
   }
 });
-/* window.addEventListener("keydown", function (e) {
-  switch (e.key.toLocaleLowerCase()) {
-    case "a":
-      if (e.shiftKey) {
-        player.direction = -1;
-        player.speed = 8;
-      } else {
-        player.direction = -1;
-        player.speed = 5;
-      }
-      break;
-    case "arrowleft":
-      if (e.shiftKey) {
-        player.direction = -1;
-        player.speed = 8;
-      } else {
-        player.direction = -1;
-        player.speed = 5;
-      }
-      break;
-    case "d":
-      if (e.shiftKey) {
-        player.direction = 1;
-        player.speed = 8;
-      } else {
-        player.direction = 1;
-        player.speed = 5;
-      }
-      break;
-    case "arrowright":
-      if (e.shiftKey) {
-        player.direction = 1;
-        player.speed = 8;
-      } else {
-        player.direction = 1;
-        player.speed = 5;
-      }
-  }
-}); */
+
+function restartGame(){
+  let restarter = new Fruit(100, 0, board, fruits, game, "fruit", player);
+  restarter.restartGame();
+}
+
 gameStart();

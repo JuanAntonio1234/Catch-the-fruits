@@ -2,11 +2,12 @@ function Game(player) {
   this.score = 0;
   this.combo = 0;
   this.superBalls = 0;
-  this.comboForSuperBall = 10; // Modificar esto para que necesites menos combo por bola grande.
+  this.isRunning = true
+  this.comboForSuperBall = 1; // Modificar esto para que necesites menos combo por bola grande.
   this.dragonBallsCollected = 0;
   this.dragonBallsMissed = 0;
-  this.goldenApplesEaten = 0;
-  this.goldenApplesMissed = 0;
+  this.OnigirisEaten = 0;
+  this.OnigirisMissed = 0;
   this.iceCreams = 0;
   this.iceCreamsDodged = 0;
   this.bombsDodged = 0;
@@ -21,7 +22,7 @@ function Game(player) {
       if (this.score < 0) {
         this.score = 0;
       }
-    } else if (type === "golden_apple") {
+    } else if (type === "Onigiri") {
       this.score += 2000 + this.combo * 15;
     }
   };
@@ -35,12 +36,7 @@ function Game(player) {
 
     if (this.superBalls == 7) {
       fruit.showBalls();
-      setTimeout(function () {
-        alert("You WON !!!\n Press Ok to play again.");
-        setTimeout(function () {
-          fruit.restartGame();
-        }, 20);
-      }, 50);
+      this.finishGame("win");
     }
   };
 
@@ -53,7 +49,7 @@ function Game(player) {
       lifes.style.backgroundImage = "url('./images/life2.png')";
     } else if (player.health === 1) {
       lifes.style.backgroundImage = "url('./images/life3.png')";
-    } else if (player.health === 3) {
+    } else if (player.health === 0) {
       lifes.style.backgroundImage = "url('./images/life4.png')";
     }
   };
@@ -61,8 +57,8 @@ function Game(player) {
   this.showStats = function () {
     let dragonBalls = document.getElementById("DragonBalls");
     let dragonBallsMissed = document.getElementById("DragonBallsMissed");
-    let goldenApples = document.getElementById("goldenApples");
-    let goldenApplesMissed = document.getElementById("goldenApplesMissed");
+    let OnigirisEaten = document.getElementById("Onigiris");
+    let OnigirisMissed = document.getElementById("OnigirisMissed");
     let iceCreams = document.getElementById("iceCreams");
     let iceCreamsDodged = document.getElementById("iceCreamsDodged");
     let bombsDodged = document.getElementById("bombsDodged");
@@ -72,12 +68,42 @@ function Game(player) {
       "Dragon Balls Collected: " + this.dragonBallsCollected;
     dragonBallsMissed.innerText =
       "Dragon Balls Missed: " + this.dragonBallsMissed;
-    goldenApples.innerText = "Golden Apples Eaten: " + this.goldenApplesEaten;
-    goldenApplesMissed.innerText =
-      "Golden Apples Missed: " + this.goldenApplesMissed;
+      OnigirisEaten.innerText = "Onigiris Eaten: " + this.OnigirisEaten;
+      OnigirisMissed.innerText =
+      "Onigiris Missed: " + this.OnigirisMissed;
     iceCreams.innerText = "Ice Creams Eaten: " + this.iceCreams;
     iceCreamsDodged.innerText = "Ice Creams Dodged: " + this.iceCreamsDodged;
     bombsDodged.innerText = "Bombs Dodged: " + this.bombsDodged;
     bombsEaten.innerText = "Bombs Eaten: " + this.bombsEaten;
   };
+
+
+
+  this.finishGame = function(result){
+    this.isRunning = false;
+    fruitSpawnInterval = 9999999999
+
+    let button = document.getElementById("restartGame")
+    let board = document.getElementById("board");
+    board.style.display = "none"
+
+    let htmlImageDiv = document.getElementById("endGameImage")
+
+    if(result === "win"){
+      htmlImageDiv.style.backgroundImage = 'url("./images/win.png")'
+
+      setTimeout(function(){
+        prompt("Has reunido las 7 bolas del draǵon.\n ¿Cuál es tu deseo?")
+        alert("Tus deseos se cumplirán.")
+      }, 100)
+      
+    }
+    else{
+      htmlImageDiv.style.backgroundImage = 'url("./images/lose.png")'
+    }
+
+    button.innerText = "Play again."
+    htmlImageDiv.style.display = "block"
+
+  }
 }

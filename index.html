@@ -12,7 +12,7 @@
     <script src="script/player.js" defer></script>
     <script src="main.js" defer></script>
     <!-- Fuente -->
-    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E" />
     <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
@@ -42,14 +42,14 @@
             <h2 id="Combo">Combo: 0</h2>
         </div>
         <div class="totalifes">
-                <h3 class="texto">LIFE: </h3>
+            <h3 class="texto">LIFE: </h3>
             <div id="life"></div>
         </div>
         <div id="stats">
             <div id="DragonBalls">Dragon Balls Collected: 0</div>
             <div id="DragonBallsMissed">Dragon Balls Missed: 0</div>
-            <div id="goldenApples"> Golden Apples Eaten: 0</div>
-            <div id="goldenApplesMissed"> Golden Apples Missed: 0</div>
+            <div id="Onigiris"> Onigiris Eaten: 0</div>
+            <div id="OnigirisMissed"> Onigiris Missed: 0</div>
             <div id="iceCreams"> Ice Creams Eaten: 0</div>
             <div id="iceCreamsDodged"> Ice Creams Dodged: 0</div>
             <div id="bombsEaten"> Bombs Eaten: 0</div>
@@ -68,12 +68,11 @@
 
     </div>
 
-    <main id="board">
+    <main id="board" style="display: none;">
     </main>
 
-
-    </div>
-
+    <div id="endGameImage">
+        <button id="restartGame" onclick="restartGame()">Play</button>
     </div>
 
 </body>
