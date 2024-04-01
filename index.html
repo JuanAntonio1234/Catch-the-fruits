@@ -28,8 +28,8 @@
                 Tu navegador no soporta el elemento de audio.
             </audio>
         </div>
-        <button onclick id="reproducirMusica()">Play</button>
-        <button onclick id="pausarMusica()">Pause</button>
+        <button id="playButton" onclick="reproducirMusica()">Play</button>
+        <button id="pauseButton" onclick="pausarMusica()">Pause</button>
 
 
 
@@ -46,13 +46,13 @@
             <div id="life"></div>
         </div>
         <div id="stats">
-            <div id="DragonBalls">Dragon Balls Collected: 0</div><br>
-            <div id="DragonBallsMissed">Dragon Balls Missed: 0</div><br>
-            <div id="goldenApples"> Golden Apples Eaten: 0</div><br>
-            <div id="goldenApplesMissed"> Golden Apples Missed: 0</div><br>
-            <div id="iceCreams"> Ice Creams Eaten: 0</div><br>
-            <div id="iceCreamsDodged"> Ice Creams Dodged: 0</div><br>
-            <div id="bombsEaten"> Bombs Eaten: 0</div><br>
+            <div id="DragonBalls">Dragon Balls Collected: 0</div>
+            <div id="DragonBallsMissed">Dragon Balls Missed: 0</div>
+            <div id="goldenApples"> Golden Apples Eaten: 0</div>
+            <div id="goldenApplesMissed"> Golden Apples Missed: 0</div>
+            <div id="iceCreams"> Ice Creams Eaten: 0</div>
+            <div id="iceCreamsDodged"> Ice Creams Dodged: 0</div>
+            <div id="bombsEaten"> Bombs Eaten: 0</div>
             <div id="bombsDodged">Bombs Dodged: 0</div>
         </div>
 
@@ -68,8 +68,12 @@
 
     </div>
 
-    <main id="board">
+    <main id="board" style="display: none;">
     </main>
+
+    <div id="endGameStats">
+
+    </div>
 
 
     </div>

@@ -6,7 +6,7 @@
 .bomb {
     width: 50px;
     height: 50px;
-    background-image: url(./images/bomb.png);
+    background-image: url(./images/antibola.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -17,7 +17,7 @@
 .goldenApple {
     width: 50px;
     height: 50px;
-    background-image: url(images/goldenApple.webp);
+    background-image: url(./images/onigiri.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -36,34 +36,23 @@
     left: 225px; */
 }
 
-
-#puntuacion {
-    font-family: "Saiyan-Sans";
-    letter-spacing: 2px;
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
-    width: 500px;
-    border: solid 3px red;
-    font-size: 30px;
-    background-image: linear-gradient(to bottom, rgb(6, 59, 173), rgb(255, 136, 0)); 
-    background-size: cover;
-    background-position: left;
-    color: transparent;
-    -webkit-background-clip: text;
-}
-
-
-h1 {
-    margin: 0;
-}
-h2 {
-    margin: 0;
-}
 #board {
     position: relative;
     width: 500px;
     height: 800px;
     background-image: url("https://i.redd.it/aj4wg4z9u9f71.png");
     background-size: cover;
+    border: 30px rgb(155, 155, 155) groove;
+    border-radius: 50px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+#endGameStats {
+    position: relative;
+    width: 500px;
+    height: 800px;
+    background-color: white;
     border: 30px rgb(155, 155, 155) groove;
     border-radius: 50px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -88,6 +77,20 @@ h2 {
     background-repeat: no-repeat;
     position: absolute;
 }
+#playButton, #pauseButton {
+    padding: 17px 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(255, 146, 56);
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: rgb(201, 147, 46) 0px 10px 0px 0px;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    padding: 17px 40px;
+  }
+  
 
 #caja {
     border: 3px solid rgb(255, 255, 255);
@@ -99,10 +102,10 @@ h2 {
     border-radius: 50px;
     background-color: rgba(255, 196, 3, 0.199);
 }
+
 #cajabolas {
     height: 730px;
     width: 120px;
-    border: 10px solid rgb(0, 238, 255);
     position: absolute;
     float: left;
 }
@@ -119,8 +122,28 @@ h2 {
     margin: 0 auto; 
 }
 
+#Score {
+    font-family: "Saiyan-Sans";
+    letter-spacing: 2px;
+    font-size: 80px;
+    color: rgb(36, 4, 214);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    margin: 0 auto; /* Para centrar horizontalmente */
+    text-align: center; /* Para centrar el texto */
+}
+
+#Combo {
+    font-family: "Saiyan-Sans";
+    letter-spacing: 2px;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    color: rgb(250, 152, 6);
+    width: 615px;
+    font-size: 80px;
+    margin: 0 auto; /* Para centrar horizontalmente */
+    text-align: center; /* Para centrar el texto */
+}
+
 .totalifes {
-    border: 2px solid black;
     height: 80px;
     width: 400px;
     margin:25px;
@@ -130,10 +153,9 @@ h2 {
 #life {
     background-image: url("./images/life1.png");
     background-size: cover;
-    width: 150px;
+    width: 160px;
     height: 50px;
-    display: inline-block; /* Cambia el comportamiento del div a inline-block */
-    vertical-align: top; /* Alinea el div verticalmente con respecto a los demás elementos */
+    display: inline-block; 
     margin-left: 20px;
     margin-top: 15px;
 }
@@ -142,22 +164,99 @@ h2 {
     font-family: "Saiyan-Sans";
     display: inline-block;
     height: 1px;
-    font-size: 40px;
+    font-size: 45px;
     margin: 20px
 }
 
 #stats{
-    margin: 25px;
+    margin-top: 0;
     float: right;
-    height: 610px;
-    width: 410px;
-    border: 2px solid black;
+    height: 600px;
+    width: 470px;
 }
 
-#DragonBalls, #goldenApples, #bombsDodged, #bombsEaten,
-#DragonBallsMissed, #goldenApplesMissed, #iceCreams, #iceCreamsDodged{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+#DragonBalls {
+    background-image: url("./images/3.png");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
     font-size: 40px;
+    padding-left: 40px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
+}
+
+#goldenApples{
+    background-image: url("./images/onigiri.png");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
+    font-size: 40px;
+    padding-left: 45px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
+
+} 
+#bombsDodged{
+    background-image: url("./images/antibola.png");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
+    font-size: 40px;
+    padding-left: 45px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
+
+} 
+#bombsEaten{
+    background-image: url("./images/antibola.png");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
+    font-size: 40px;
+    padding-left: 45px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
+}
+#DragonBallsMissed{
+    background-image: url("./images/3.png");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
+    font-size: 40px;
+    padding-left: 40px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
+} 
+#goldenApplesMissed{
+    background-image: url("./images/onigiri.png");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
+    font-size: 40px;
+    padding-left: 45px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
+} 
+#iceCreams{
+    background-image: url("./images/heladowebp");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
+    font-size: 40px;
+    padding-left: 45px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
+} 
+#iceCreamsDodged {
+    background-image: url("./images/heladowebp");
+    background-size: 40px 40px; 
+    background-repeat: no-repeat;
+    font-family: "Saiyan-Sans";
+    font-size: 40px;
+    padding-left: 45px;
+    color: orange;
+    -webkit-text-stroke: 1px rgb(73, 39, 0);
 }
 
 #superBola1 {
