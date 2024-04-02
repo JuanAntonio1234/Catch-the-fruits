@@ -3,7 +3,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
   this.type = type;
   this.x = x;
   this.y = y;
-  this.speed = 2;
+  this.speed = 2.5;
   this.direction = 1;
   this.width = 50;
   this.height = 50;
@@ -145,7 +145,7 @@ function Fruit(x, y, board, fruits, game, type, player) {
     let board = document.getElementById("board");
     board.style.display = "block"
 
-    fruitSpawnInterval = 300
+    fruitSpawnInterval = 400
 
     //Reiniciamos todo lo relacionado con el HTML
     let score_html = document.getElementById("Score");

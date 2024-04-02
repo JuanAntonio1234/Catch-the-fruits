@@ -93,7 +93,7 @@
 
 #caja {
   border: 3px solid rgb(255, 255, 255);
-  height: 980px;
+  height: 1020px;
   width: 620px;
   position: absolute;
   top: 1%; /* Ajusta la distancia desde la parte superior según tus necesidades */
@@ -227,10 +227,10 @@
   background-size: cover;
   width: 110px;
   height: 110px;
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  border-radius: 90px; /* Establece el radio de las esquinas */
-  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6); /* Agrega una sombra en el lado inferior derecho */
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  border-radius: 90px; 
+  box-shadow: 10px 10px 20px rgba(225, 252, 106, 0.6); 
 }
 
 #superBola2 {

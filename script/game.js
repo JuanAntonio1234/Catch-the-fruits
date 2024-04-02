@@ -3,7 +3,7 @@ function Game(player) {
   this.combo = 0;
   this.superBalls = 0;
   this.isRunning = true
-  this.comboForSuperBall = 20; // Modificar esto para que necesites menos combo por bola grande.
+  this.comboForSuperBall = 15; // Modificar esto para que necesites menos combo por bola grande.
   this.dragonBallsCollected = 0;
   this.dragonBallsMissed = 0;
   this.OnigirisEaten = 0;
@@ -15,15 +15,15 @@ function Game(player) {
 
   this.addScore = function (type) {
     if (type === "apple") {
-      let scoreToAdd = 100 + this.combo * 20;
+      let scoreToAdd = this.combo * 80;
       this.score += scoreToAdd;
     } else if (type === "bomb") {
-      this.score -= 4000;
+      this.score -= 18000;
       if (this.score < 0) {
         this.score = 0;
       }
     } else if (type === "Onigiri") {
-      this.score += 2000 + this.combo * 15;
+      this.score += 2000
     }
   };
 
@@ -91,12 +91,6 @@ function Game(player) {
 
     if(result === "win"){
       htmlImageDiv.style.backgroundImage = 'url("./images/win.png")'
-
-      setTimeout(function(){
-        prompt("Has reunido las 7 bolas del draǵon.\n ¿Cuál es tu deseo?")
-        alert("Tus deseos se cumplirán.")
-      }, 100)
-      
     }
     else{
       htmlImageDiv.style.backgroundImage = 'url("./images/lose.png")'
