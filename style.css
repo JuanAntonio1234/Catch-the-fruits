@@ -221,6 +221,15 @@
   -webkit-text-stroke: 1px rgb(73, 39, 0);
 }
 
+@keyframes rotate {
+  0% {
+    transform: scale(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #superBola1 {
   display: none;
   background-image: url("./images/1.png");
@@ -322,15 +331,6 @@ body {
 #superBola7 {
   animation: rotate 3s infinite;
 }
-@keyframes rotate {
-  0% {
-    transform: scale(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 #restartGame{
     display: block;
     margin: 0 auto;

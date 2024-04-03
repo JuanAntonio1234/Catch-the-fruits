@@ -3,7 +3,7 @@ function Game(player) {
   this.combo = 0;
   this.superBalls = 0;
   this.isRunning = true
-  this.comboForSuperBall = 15; // Modificar esto para que necesites menos combo por bola grande.
+  this.comboForSuperBall = 5; // Modificar esto para que necesites menos combo por bola grande.
   this.dragonBallsCollected = 0;
   this.dragonBallsMissed = 0;
   this.OnigirisEaten = 0;

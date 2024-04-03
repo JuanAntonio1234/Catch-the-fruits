@@ -202,7 +202,6 @@ function Fruit(x, y, board, fruits, game, type, player) {
     });
 
     fruits.forEach(function (fruta) {
-      //GRACIAS ALMA POR DECIRME QUE ERA EL TIMER ID
       clearInterval(fruta.timerId);
     });
     fruits = [];
